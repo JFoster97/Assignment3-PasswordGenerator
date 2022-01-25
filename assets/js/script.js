@@ -9,9 +9,10 @@ const passwordChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234
 
 var generatePassword= function() {
     var passwordLength = 12;
-    for (var i =0; i < passwordLength; i++) {
-        var randomValue = Math.floor(Math.random() * passwordChars.length);
-        passwordValue += passwordChars.substring(randomValue);
+    let passwordValue =' ';
+    for (let i =0; i < passwordLength; i++) {
+        // var randomValue = Math.floor(Math.random() *passwordChars.length);
+        passwordValue += Math.floor(Math.random()*passwordChars.length);
         console.log (passwordValue);
     }
     return passwordValue;
