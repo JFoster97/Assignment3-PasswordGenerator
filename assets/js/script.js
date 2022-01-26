@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var passwordLength = ''
 // var userLength = document.querySelector('#userLength').input;
 
 
@@ -8,6 +9,7 @@ function generatePassword() {
   // Create a string for function to pull from
     let passwordChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()?`~_-{}'
     // Set the length of the generated value
+    let passwordLength = document.querySelector('.form-control').value;
     let passwordValue =' ';
     // Generates random values from the described string
     for (let i =0; i < passwordLength; i++) {
@@ -31,6 +33,8 @@ console.log(generatePassword);
 // Add event listener to generate button
 generateBtn.addEventListener("click", function() {
   let userLength = document.querySelector('.form-control').value;
-  let passwordLength = userLength;
+  var passwordLength = userLength;
   console.log(passwordLength);
+  generatePassword();
+  writePassword();
 });
