@@ -1,18 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-// Create strings with characters used for different parameters
-var passwordValue =''
-
-const passwordChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()?'
+// var userLength = document.querySelector('#userLength').input;
 
 
-var generatePassword= function() {
-    var passwordLength = 12;
+// Generate a random value from the passwordChars string
+function generatePassword() {
+  // Create a string for function to pull from
+    let passwordChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()?`~_-{}'
+    // Set the length of the generated value
     let passwordValue =' ';
+    // Generates random values from the described string
     for (let i =0; i < passwordLength; i++) {
         // var randomValue = Math.floor(Math.random() *passwordChars.length);
-        passwordValue += Math.floor(Math.random()*passwordChars.length);
+        passwordValue += passwordChars.charAt(Math.floor(Math.random()*passwordChars.length));
         console.log (passwordValue);
     }
     return passwordValue;
@@ -27,5 +27,10 @@ function writePassword() {
 
 }
 console.log(generatePassword);
+
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", function() {
+  let userLength = document.querySelector('.form-control').value;
+  let passwordLength = userLength;
+  console.log(passwordLength);
+});
